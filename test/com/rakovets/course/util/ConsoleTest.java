@@ -23,4 +23,8 @@ public class ConsoleTest {
     public static String getConsoleContent() {
         return outContent.toString().trim();
     }
+
+    public static String getConsoleContentWithoutTrim() {
+        return outContent.toString();
+    }
 }
