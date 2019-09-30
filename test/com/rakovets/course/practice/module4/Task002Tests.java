@@ -15,20 +15,20 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * @since 1.0
  */
 class Task002Tests extends ConsoleTest {
-    static Stream<Arguments> testArgumentsProvider() {
-        return Stream.of(
-                Arguments.of(new String[] {"13", "false"}, "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13"),
-                Arguments.of(new String[] {"9", "false"}, "1\n2\n3\n4\n5\n6\n7\n8\n9"),
-                Arguments.of(new String[] {"13", "true"}, "\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12"),
-                Arguments.of(new String[] {"9", "true"}, "\n1\n2\n3\n4\n5\n6\n7\n8")
-        );
-    }
+	static Stream<Arguments> testArgumentsProvider() {
+		return Stream.of(
+				Arguments.of(new String[]{"13", "false"}, "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13"),
+				Arguments.of(new String[]{"9", "false"}, "1\n2\n3\n4\n5\n6\n7\n8\n9"),
+				Arguments.of(new String[]{"13", "true"}, "\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12"),
+				Arguments.of(new String[]{"9", "true"}, "\n1\n2\n3\n4\n5\n6\n7\n8")
+		);
+	}
 
-    @ParameterizedTest(name = "Count rows and is table header: {0}")
-    @MethodSource("testArgumentsProvider")
-    @DisplayName("Generator rows of table (improve)")
-    void test(String[] position, String expected) {
-        Task002.main(position);
-        assertEquals(getConsoleContentWithoutTrim(), expected);
-    }
+	@ParameterizedTest(name = "Count rows and is table header: {0}")
+	@MethodSource("testArgumentsProvider")
+	@DisplayName("Generator rows of table (improve)")
+	void test(String[] position, String expected) {
+		Task002.main(position);
+		assertEquals(getConsoleContentWithoutTrim(), expected);
+	}
 }

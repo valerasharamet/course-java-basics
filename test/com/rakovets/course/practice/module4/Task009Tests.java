@@ -14,21 +14,22 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * @author Dmitry Rakovets
  * @since 1.0
  */
-class Task001Tests extends ConsoleTest {
+class Task009Tests extends ConsoleTest {
 	static Stream<Arguments> testArgumentsProvider() {
 		return Stream.of(
-				Arguments.of("13", "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13"),
-				Arguments.of("9", "1\n2\n3\n4\n5\n6\n7\n8\n9"),
-				Arguments.of("12", "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12"),
-				Arguments.of("8", "1\n2\n3\n4\n5\n6\n7\n8")
+				Arguments.of(new String[]{"13", "20", "5.0"}, "143.35"),
+				Arguments.of(new String[]{"20", "42", "4.0"}, "553.42"),
+				Arguments.of(new String[]{"5", "10", "10.0"}, "57.18"),
+				Arguments.of(new String[]{"1", "20", "1.0"}, "1918.62"),
+				Arguments.of(new String[]{"0", "20", "5.0"}, "0.00")
 		);
 	}
 
-	@ParameterizedTest(name = "Count rows: {0}")
+	@ParameterizedTest(name = "Count rows and is table header: {0}")
 	@MethodSource("testArgumentsProvider")
-	@DisplayName("Generator rows of table")
-	void test(String position, String expected) {
-		Task001.main(new String[]{position});
+	@DisplayName("Generator rows of table (improve)")
+	void test(String[] position, String expected) {
+		Task009.main(position);
 		assertEquals(getConsoleContentWithoutTrim(), expected);
 	}
 }

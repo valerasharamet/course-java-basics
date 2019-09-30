@@ -3,32 +3,35 @@ package com.rakovets.course.practice.module4;
 import java.util.Scanner;
 
 /**
- * Разработать программу для табличного процессора:
- * Программа генерирует номера строк при создании таблицы. Известно:
- * @param rows количество строк в таблице
- * @return номера строк, где каждый номер на новой строке
+ * Разработать программу для бухгалтерии:
+ * Конвертировать чесловую сумму в сумму бухгалтерском формате, т.е. начиная справа, каждые три позиции отделяются
+ * пробелом. Известно:
+ * @param amount сумма
+ * @return сумма в бухгалтерском формате
  *
  * @author Dmitry Rakovets
  * @since 1.0
  */
-public class Task001 {
+public class Task008 {
 	public static void main(String[] args) {
 		// Ввод данных осуществляется в Console, для проверки различных вариантов входных параметров
 		Scanner scanner = new Scanner(System.in);
 
 		// Код необходимый для тестирования, не изменять
-		int rows = (args.length!=1) ? scanner.nextInt():Integer.parseInt(args[0]);
+		long amount = (args.length!=1 ? scanner.nextLong():Long.parseLong(args[0]));
 
 		//TODO
 		// Код, решающий задачу пишем ниже, при этом используяся переменные объявленные выше (их можно изменять)
 		// Для проверки решения необходимо запустить @Test для данного class (в директории test)
-		String result = new String();
-		for (int i = 1; i <= rows; i++) {
-			if (rows!=i) {
-				System.out.print(i + "\n");
-			} else {
-				System.out.print(i);
-			}
+		String result = "";
+		long tempAmount = Math.abs(amount);
+		while (tempAmount != 0) {
+			result = tempAmount % 1000 + (result == "" ? "" : " ") + result;
+			tempAmount = tempAmount / 1000;
 		}
+		if (amount < 0) {
+			result = "-" + result;
+		}
+		System.out.print(result);
 	}
 }

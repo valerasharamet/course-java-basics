@@ -14,13 +14,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * @author Dmitry Rakovets
  * @since 1.0
  */
-class Task001Tests extends ConsoleTest {
+class Task008Tests extends ConsoleTest {
 	static Stream<Arguments> testArgumentsProvider() {
 		return Stream.of(
-				Arguments.of("13", "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13"),
-				Arguments.of("9", "1\n2\n3\n4\n5\n6\n7\n8\n9"),
-				Arguments.of("12", "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12"),
-				Arguments.of("8", "1\n2\n3\n4\n5\n6\n7\n8")
+				Arguments.of("13524624562456", "13 524 624 562 456"),
+				Arguments.of("-92346234", "-92 346 234"),
+				Arguments.of("123456453456", "123 456 453 456"),
+				Arguments.of("-834563456234", "-834 563 456 234")
 		);
 	}
 
@@ -28,7 +28,7 @@ class Task001Tests extends ConsoleTest {
 	@MethodSource("testArgumentsProvider")
 	@DisplayName("Generator rows of table")
 	void test(String position, String expected) {
-		Task001.main(new String[]{position});
+		Task008.main(new String[]{position});
 		assertEquals(getConsoleContentWithoutTrim(), expected);
 	}
 }
