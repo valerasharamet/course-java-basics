@@ -34,7 +34,7 @@ public class Task03 extends StandardInputTask {
 		//TODO
 		// Код, решающий задачу пишем ниже, при этом используя параметры метода
 		// Для проверки решения необходимо запустить @Test для данного class (в директории test)
-		return null;
+		return Arrays.stream(text.split(";")).map(x -> x.split(" ")[0]).toArray(String[]::new);
 	}
 
 	/**
@@ -46,7 +46,7 @@ public class Task03 extends StandardInputTask {
 		//TODO
 		// Код, решающий задачу пишем ниже, при этом используя параметры метода
 		// Для проверки решения необходимо запустить @Test для данного class (в директории test)
-		return null;
+		return Arrays.stream(text.split(";")).map(x -> x.split("\\s+")[1]).toArray(String[]::new);
 	}
 
 	/**
@@ -58,6 +58,6 @@ public class Task03 extends StandardInputTask {
 		//TODO
 		// Код, решающий задачу пишем ниже, при этом используя параметры метода
 		// Для проверки решения необходимо запустить @Test для данного class (в директории test)
-		return null;
+		return Arrays.stream(text.split(";")).mapToInt(x -> Integer.parseInt(x.split("\\s+")[2])).toArray();
 	}
 }

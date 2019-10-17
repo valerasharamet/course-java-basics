@@ -32,7 +32,7 @@ public class Task01 extends StandardInputTask {
 		//TODO
 		// Код, решающий задачу пишем ниже, при этом используя параметры метода
 		// Для проверки решения необходимо запустить @Test для данного class (в директории test)
-		return null;
+		return fullName.split(" ")[0];
 	}
 
 	/**
@@ -44,7 +44,7 @@ public class Task01 extends StandardInputTask {
 		//TODO
 		// Код, решающий задачу пишем ниже, при этом используя параметры метода
 		// Для проверки решения необходимо запустить @Test для данного class (в директории test)
-		return null;
+		return fullName.split(" ")[1];
 	}
 
 	/**
@@ -56,6 +56,7 @@ public class Task01 extends StandardInputTask {
 		//TODO
 		// Код, решающий задачу пишем ниже, при этом используя параметры метода
 		// Для проверки решения необходимо запустить @Test для данного class (в директории test)
-		return null;
+		String[] names = fullName.split(" ");
+		return String.join(" ", names[1], names[0]);
 	}
 }

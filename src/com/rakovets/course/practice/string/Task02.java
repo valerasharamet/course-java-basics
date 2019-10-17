@@ -3,6 +3,8 @@ package com.rakovets.course.practice.string;
 import com.rakovets.course.util.StandardInputTask;
 
 import java.util.Arrays;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Разработать программу для анализа банковских отчетов.
@@ -33,7 +35,12 @@ public class Task02 extends StandardInputTask {
 		//TODO
 		// Код, решающий задачу пишем ниже, при этом используя параметры метода
 		// Для проверки решения необходимо запустить @Test для данного class (в директории test)
-		return null;
+		Pattern pattern = Pattern.compile("\\s(-|)\\d*(\\.\\d*|)\\$\\s");
+		Matcher matcher = pattern.matcher(report);
+
+		return matcher.results()
+				.mapToDouble(x -> Double.parseDouble(x.group().replace("$", "")))
+				.toArray();
 	}
 
 	/**
@@ -45,6 +52,11 @@ public class Task02 extends StandardInputTask {
 		//TODO
 		// Код, решающий задачу пишем ниже, при этом используя параметры метода
 		// Для проверки решения необходимо запустить @Test для данного class (в директории test)
-		return 0.0;
+		Pattern pattern = Pattern.compile("\\s(-|)\\d*(\\.\\d*|)\\$\\s");
+		Matcher matcher = pattern.matcher(report);
+
+		return matcher.results()
+				.mapToDouble(x -> Double.parseDouble(x.group().replace("$", "")))
+				.sum();
 	}
 }
