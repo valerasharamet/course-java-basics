@@ -25,5 +25,19 @@ public class Task02 {
         //TODO
         // Код, решающий задачу пишем ниже, при этом используяся переменные объявленные выше (их можно изменять)
         // Для проверки решения необходимо запустить @Test для данного class (в директории test)
+
+        int i = 1;
+        String  str="";
+        if (headerRowEnable)
+            rows = rows - 1;
+        while(i <= rows) {
+            if (headerRowEnable) {
+                str = str+ "\n"+i;
+            } else  str = str+ i +"\n";
+            i++;
+        }
+        if(!headerRowEnable)
+            str = str.substring(0, str.length() - 1);
+        System.out.print(str);
     }
 }
