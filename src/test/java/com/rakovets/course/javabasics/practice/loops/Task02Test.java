@@ -19,8 +19,8 @@ class Task02Test extends StandardOutputTest {
         return Stream.of(
                 Arguments.of(new String[]{"13", "false"}, "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13"),
                 Arguments.of(new String[]{"9", "false"}, "1\n2\n3\n4\n5\n6\n7\n8\n9"),
-                Arguments.of(new String[]{"13", "true"}, "\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12"),
-                Arguments.of(new String[]{"9", "true"}, "\n1\n2\n3\n4\n5\n6\n7\n8")
+                Arguments.of(new String[]{"13", "true"}, "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12"),
+                Arguments.of(new String[]{"9", "true"}, "1\n2\n3\n4\n5\n6\n7\n8")
         );
     }
 
