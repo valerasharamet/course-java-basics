@@ -1,5 +1,6 @@
 package com.rakovets.course.javabasics.practice.loops;
-
+import java.math.RoundingMode;
+import java.text.*;
 import java.util.Scanner;
 
 /**
@@ -26,5 +27,16 @@ public class Task03 {
         //TODO
         // Код, решающий задачу пишем ниже, при этом используяся переменные объявленные выше (их можно изменять)
         // Для проверки решения необходимо запустить @Test для данного class (в директории test)
+
+        double profit = depositAmount;
+        for(int i = 1; i <= depositTerm; i++ )
+        {
+            profit = profit + (profit*annualDepositPercent)/100;
+        }
+        DecimalFormat df = new DecimalFormat("#.##");
+        DecimalFormatSymbols decimalFormatSymbols = df.getDecimalFormatSymbols();
+        decimalFormatSymbols.setDecimalSeparator('.');
+        df.setDecimalFormatSymbols(decimalFormatSymbols);
+        System.out.print( df.format(profit));
     }
 }
