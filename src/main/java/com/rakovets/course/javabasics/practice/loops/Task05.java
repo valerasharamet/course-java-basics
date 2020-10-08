@@ -7,7 +7,7 @@ import java.util.Scanner;
  * Спрогнозировать через какое время party(team) игроков убьет RaidBoss и получит вознаграждение. Известно:
  *
  * @param healthPoints               количество HP RaidBoss
- * @param regenerationPercentPerHour регенерация HP RaidBoss (%/hour)
+ * @param regenerationPercentFromCurrentHealth регенерация HP RaidBoss (%/hour)
  * @param averageDamagePerHour       средний урон команды игроков по Raid Boss (HP/hour)
  * @author Dmitry Rakovets
  * @version 1.0
@@ -26,5 +26,17 @@ public class Task05 {
         //TODO
         // Код, решающий задачу пишем ниже, при этом используяся переменные объявленные выше (их можно изменять)
         // Для проверки решения необходимо запустить @Test для данного class (в директории test)
+
+        double damageOneHour = healthPoints;
+        for(int i = 1; i <= 25; i++) {
+            damageOneHour = damageOneHour + ((damageOneHour * regenerationPercentFromCurrentHealth) / 100) - averageDamagePerHour;
+            if (i == 24) {
+                System.out.print(-1);
+                break;
+            } else if (damageOneHour < averageDamagePerHour) {
+                System.out.print(i+1);
+                break;
+            }
+        }
     }
 }
