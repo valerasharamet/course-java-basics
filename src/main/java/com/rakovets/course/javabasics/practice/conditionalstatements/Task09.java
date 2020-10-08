@@ -25,5 +25,15 @@ public class Task09 {
         //TODO
         // Код, решающий задачу пишем ниже, при этом используяся переменные объявленные выше (их можно изменять)
         // Для проверки решения необходимо запустить @Test для данного class (в директории test)
+
+        int porch=1;
+        int floor=1;
+        int numberApartmentsPerPorch = numberFloors * numberApartmentsPerFloor;
+        if(apartmentNumber > numberApartmentsPerPorch )
+            porch = apartmentNumber/numberApartmentsPerPorch+1;
+        if(apartmentNumber == numberApartmentsPerPorch*porch) floor = numberFloors;
+        else
+            floor=  (apartmentNumber - numberApartmentsPerPorch*(porch-1))/numberApartmentsPerFloor+1;
+        System.out.print("Porch: "+porch+". Floor: "+ floor);
     }
 }
