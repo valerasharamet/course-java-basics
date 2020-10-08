@@ -28,5 +28,15 @@ public class Task08 {
         //TODO
         // Код, решающий задачу пишем ниже, при этом используяся переменные объявленные выше (их можно изменять)
         // Для проверки решения необходимо запустить @Test для данного class (в директории test)
+
+        String strReturn = startNumberItems+ " - "+ startPriceAllItems+"\n";
+        double step= startPriceAllItems/startNumberItems;
+        int dif= startNumberItems;
+        for (int i = 0;i< sizeTotalPrice;i++)
+        {
+            dif= dif+differentialNumberItems;
+            strReturn = strReturn+ dif + " - " + (startPriceAllItems+step*differentialNumberItems*(i+1)) + "\n";
+        }
+        System.out.print(strReturn);
     }
 }
