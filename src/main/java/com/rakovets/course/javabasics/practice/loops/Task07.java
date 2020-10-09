@@ -1,5 +1,8 @@
 package com.rakovets.course.javabasics.practice.loops;
 
+
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.util.Scanner;
 
 /**
@@ -23,8 +26,22 @@ public class Task07 {
         int finishDistance = (args.length != 3) ? scanner.nextInt() : Integer.parseInt(args[1]);
         double dailyProgress = (args.length != 3) ? scanner.nextDouble() : Double.parseDouble(args[2]);
 
+        DecimalFormat df = new DecimalFormat("#.##");
+        DecimalFormatSymbols decimalFormatSymbols = df.getDecimalFormatSymbols();
+        decimalFormatSymbols.setDecimalSeparator('.');
+        df.setDecimalFormatSymbols(decimalFormatSymbols);
         //TODO
         // Код, решающий задачу пишем ниже, при этом используяся переменные объявленные выше (их можно изменять)
         // Для проверки решения необходимо запустить @Test для данного class (в директории test)
+
+        double progressDailyDistance = startDistance;
+        double result = startDistance;
+        while (progressDailyDistance < finishDistance && startDistance > 0) {
+            progressDailyDistance = progressDailyDistance + ((progressDailyDistance * dailyProgress) / 100);
+            result = result + progressDailyDistance;
+        }
+        if (startDistance <=0)
+            System.out.print(0.00);
+        System.out.print(df.format(result - progressDailyDistance));
     }
 }
