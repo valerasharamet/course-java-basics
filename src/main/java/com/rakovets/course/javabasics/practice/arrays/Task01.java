@@ -2,6 +2,9 @@ package com.rakovets.course.javabasics.practice.arrays;
 
 import com.rakovets.course.javabasics.util.StandardInputTask;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+
 /**
  * Разработать программу для электронного дневника:
  * которая работает с отметками только по одному предмету
@@ -35,7 +38,24 @@ public class Task01 extends StandardInputTask {
         int i ;
         for( i = 0; i<marks.length;i++)
             sumMark = sumMark + marks[i];
-        return sumMark/i;
+        DecimalFormat df = new DecimalFormat("#.##");
+       // DecimalFormatSymbols decimalFormatSymbols = df.getDecimalFormatSymbols();
+      //  decimalFormatSymbols.setDecimalSeparator('.');
+      //  df.setDecimalFormatSymbols(decimalFormatSymbols);
+        //TODO
+        // Код, решающий задачу пишем ниже, при этом используяся переменные объявленные выше (их можно изменять)
+        // Для проверки решения необходимо запустить @Test для данного class (в директории test)
+
+       // double progressDailyDistance = startDistance;
+      //  double result = startDistance;
+      //  while (progressDailyDistance < finishDistance && startDistance > 0) {
+      //      progressDailyDistance = progressDailyDistance + ((progressDailyDistance * dailyProgress) / 100);
+      //      result = result + progressDailyDistance;
+     //   }
+       // if (startDistance <=0)
+       //     System.out.print(0.00);
+      //  System.out.print(df.format(result - progressDailyDistance));
+        return (sumMark/i);
     }
 
     /**
