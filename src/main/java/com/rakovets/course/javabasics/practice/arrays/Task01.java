@@ -19,6 +19,7 @@ public class Task01 extends StandardInputTask {
         int[] marks = nextArray(countMarks);
 
         // Вызов методов
+       // DecimalFormat df = new DecimalFormat("#.##");
         getAverageMark(marks);
         getMinMark(marks);
         getMaxMark(marks);
@@ -35,29 +36,20 @@ public class Task01 extends StandardInputTask {
         // Код, решающий задачу пишем ниже, при этом используя параметры метода
         // Для проверки решения необходимо запустить @Test для данного class (в директории test)
         double sumMark = 0;
-        int i ;
-        for( i = 0; i<marks.length;i++)
+        int i;
+        for (i = 0; i < marks.length; i++) {
             sumMark = sumMark + marks[i];
-        DecimalFormat df = new DecimalFormat("#.##");
-       // DecimalFormatSymbols decimalFormatSymbols = df.getDecimalFormatSymbols();
-      //  decimalFormatSymbols.setDecimalSeparator('.');
-      //  df.setDecimalFormatSymbols(decimalFormatSymbols);
+        }
+     //   DecimalFormat f = new DecimalFormat("##.00");
+
+
+        return Math.round((sumMark/i)*100)/100.00;
+    }
+
+
         //TODO
         // Код, решающий задачу пишем ниже, при этом используяся переменные объявленные выше (их можно изменять)
         // Для проверки решения необходимо запустить @Test для данного class (в директории test)
-
-       // double progressDailyDistance = startDistance;
-      //  double result = startDistance;
-      //  while (progressDailyDistance < finishDistance && startDistance > 0) {
-      //      progressDailyDistance = progressDailyDistance + ((progressDailyDistance * dailyProgress) / 100);
-      //      result = result + progressDailyDistance;
-     //   }
-       // if (startDistance <=0)
-       //     System.out.print(0.00);
-      //  System.out.print(df.format(result - progressDailyDistance));
-        return (sumMark/i);
-    }
-
     /**
      * Возвращает минимальную отметку.
      *
