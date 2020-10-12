@@ -32,7 +32,19 @@ public class Task03 extends StandardInputTask {
         //TODO
         // Код, решающий задачу пишем ниже, при этом используя параметры метода
         // Для проверки решения необходимо запустить @Test для данного class (в директории test)
-        return null;
+        double [] averageMark = new double[marks.length];
+        int countSemester = 0;
+        double grade = 0.00;
+        for (int i = 0 ; i < marks.length; i++) {
+            countSemester =0;
+            grade = 0.00;
+            for (int j = 0; j < marks[i].length; j++) {
+                grade = grade + marks[i][j];
+                countSemester++;
+            }
+           averageMark[i] = Math.round((grade/countSemester)*100)/100.00;;
+        }
+        return averageMark;
     }
 
     /**
@@ -45,7 +57,18 @@ public class Task03 extends StandardInputTask {
         //TODO
         // Код, решающий задачу пишем ниже, при этом используя параметры метода
         // Для проверки решения необходимо запустить @Test для данного class (в директории test)
-        return null;
+
+        int [] minMark = new int[marks.length];
+        for (int i = 0 ; i < marks.length; i++) {
+            int minGrade = marks[i][0];
+            for (int j = 0; j < marks[i].length; j++) {
+                if(marks[i][j] < minGrade) {
+                    minGrade = marks[i][j];
+                }
+            }
+            minMark[i] = minGrade;
+        }
+        return minMark;
     }
 
     /**
@@ -58,7 +81,18 @@ public class Task03 extends StandardInputTask {
         //TODO
         // Код, решающий задачу пишем ниже, при этом используя параметры метода
         // Для проверки решения необходимо запустить @Test для данного class (в директории test)
-        return null;
+
+        int [] maxMark = new int[marks.length];
+        for (int i = 0 ; i < marks.length; i++) {
+            int maxGrade = marks[i][0];
+            for (int j = 0; j < marks[i].length; j++) {
+                if(marks[i][j] > maxGrade) {
+                    maxGrade = marks[i][j];
+                }
+            }
+            maxMark[i] = maxGrade;
+        }
+        return maxMark;
     }
 
     private static int[][] nextArray(int countDisciplines, int countSemesters) {
