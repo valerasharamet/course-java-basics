@@ -32,8 +32,17 @@ public class Task02 extends StandardInputTask {
         //TODO
         // Код, решающий задачу пишем ниже, при этом используя параметры метода
         // Для проверки решения необходимо запустить @Test для данного class (в директории test)
-        return 0.0;
+        int i;
+        int countMarks = 0;
+        double grade = 0.00;
+        for (i = 0; i <  marks.length; i++)
+            for (int j = 0; j < marks[i].length; j++) {
+                grade = grade + marks[i][j];
+                countMarks++;
+            }
+        return Math.round((grade/countMarks)*100)/100.00;
     }
+
 
     /**
      * Возвращает минимальную отметку за весь период обучения.
@@ -45,7 +54,13 @@ public class Task02 extends StandardInputTask {
         //TODO
         // Код, решающий задачу пишем ниже, при этом используя параметры метода
         // Для проверки решения необходимо запустить @Test для данного class (в директории test)
-        return 0;
+
+        int minMark = marks[0][0];
+        for (int i = 0; i <  marks.length; i++)
+            for (int j = 0; j < marks[i].length; j++)
+                if (marks[i][j] < minMark)
+                    minMark=marks[i][j];
+        return minMark;
     }
 
     /**
@@ -58,7 +73,12 @@ public class Task02 extends StandardInputTask {
         //TODO
         // Код, решающий задачу пишем ниже, при этом используя параметры метода
         // Для проверки решения необходимо запустить @Test для данного class (в директории test)
-        return 0;
+        int maxMark = marks[0][0];
+        for (int i = 0; i <  marks.length; i++)
+            for (int j = 0; j < marks[i].length; j++)
+                if (marks[i][j] > maxMark)
+                    maxMark=marks[i][j];
+        return maxMark;
     }
 
     private static int[][] nextArray(int countDisciplines, int countSemesters) {
