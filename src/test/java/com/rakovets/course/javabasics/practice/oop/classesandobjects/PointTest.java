@@ -7,7 +7,7 @@ public class PointTest {
         point1.setX(6);
         point1.setY(12);
         System.out.println(point1.getX() + "\t" + point1.getY());
-        Point point2 = new Point(6, 15);
+        Point point2 = new Point(10, 15);
         System.out.println(point1.distance(point2));
     }
 }
