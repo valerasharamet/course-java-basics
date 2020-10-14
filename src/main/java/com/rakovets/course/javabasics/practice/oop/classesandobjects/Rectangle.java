@@ -1,8 +1,8 @@
 package com.rakovets.course.javabasics.practice.oop.classesandobjects;
 
 public class Rectangle {
-    Point firstPoint;
-    Point secondPoint;
+    protected Point firstPoint;
+    protected Point secondPoint;
     public Rectangle (Point firstPoint, Point secondPoint) {
         this.firstPoint = new Point(firstPoint.getX(), firstPoint.getY());
         this.secondPoint = new Point(secondPoint.getX(), secondPoint.getY());
