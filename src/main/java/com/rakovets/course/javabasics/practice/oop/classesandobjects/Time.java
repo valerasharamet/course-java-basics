@@ -4,15 +4,17 @@ public class Time {
     private int hour;
     private int minute;
     private int second;
+
     public Time(int h, int m, int s) {
         this.hour = h;
         this.minute = m;
         this.second = s;
     }
+
     public Time(int s) {
-        this.hour = s / 3600;
-        this.minute = s - this.hour * 3600;
-        this.second = s - (s - this.hour * 3600) - (this.minute * 60);
+        this.second = s%60;
+        this.minute = ((s - this.second)/60) %60;
+        this.hour = (((s - this.second)/60) - this.minute)/60;
 
     }
     public int getHour() {
