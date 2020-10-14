@@ -20,6 +20,10 @@ public class Point {
     public void setY(int y) {
         this.y= y;
     }
+    public void setPoint(Point pt) {
+        x = pt.getX();
+        y = pt.getY();
+    }
     public double distance(Point pt) {
         return Math.sqrt(Math.pow((x- pt.x),2)+Math.pow((y- pt.y),2));
     }
