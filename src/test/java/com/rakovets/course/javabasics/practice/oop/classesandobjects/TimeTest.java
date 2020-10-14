@@ -6,9 +6,12 @@ public class TimeTest {
        // int minute = scanner.nextInt();
          Time vrema = new Time (6, 21, 36);
          System.out.println(vrema.getHour() + "/" + vrema.getMinute() + "/" + vrema.getSecond());
+         vrema.setHour(7);
          vrema.setMinute(9);
+         vrema.setSecond(15);
          System.out.println(vrema.getHour() + "/" + vrema.getMinute() + "/" + vrema.getSecond());
-         Time sec = new Time(2471654);
+         Time sec = new Time(7385);
          System.out.println(sec.getHour() + "/" + sec.getMinute() + "/" + sec.getSecond());
+         System.out.println(sec.getTotalSecond());
     }
 }
