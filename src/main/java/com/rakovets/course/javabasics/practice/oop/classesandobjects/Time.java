@@ -6,34 +6,34 @@ public class Time {
     private int second;
 
     public Time(int h, int m, int s) {
-        this.hour = h;
-        this.minute = m;
-        this.second = s;
+        hour = h;
+        minute = m;
+        second = s;
     }
 
     public Time(int s) {
-        this.second = s%60;
-        this.minute = ((s - this.second)/60) %60;
-        this.hour = (((s - this.second)/60) - this.minute)/60;
+        second = s%60;
+        minute = ((s - second)/60) %60;
+        hour = (((s - second)/60) - minute)/60;
 
     }
     public int getHour() {
-        return this.hour;
+        return hour;
     }
-    public void setHour(int hr) {
-        this.hour = hr;
+    public void setHour(int hour) {
+        this.hour = hour;
     }
     public int getMinute() {
-        return this.minute;
+        return minute;
     }
-    public void setMinute(int min) {
-        this.minute = min;
+    public void setMinute(int minute) {
+        this.minute = minute;
     }
     public int getSecond() {
-        return this.second;
+        return second;
     }
-    public void setSecond(int sec) {
-        this.second = sec;
+    public void setSecond(int second) {
+        this.second = second;
     }
     public int getTotalSecond() {
         return this.hour * 3600 + this.minute*60 + this.second;
