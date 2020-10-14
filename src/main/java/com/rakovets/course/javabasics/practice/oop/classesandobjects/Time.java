@@ -13,6 +13,7 @@ public class Time {
         this.hour = s / 3600;
         this.minute = s - this.hour * 3600;
         this.second = s - (s - this.hour * 3600) - (this.minute * 60);
+
     }
     public int getHour() {
         return this.hour;

@@ -1,5 +1,4 @@
 package com.rakovets.course.javabasics.practice.oop.classesandobjects;
-import com.rakovets.course.javabasics.practice.oop.classesandobjects.Time;
 public class TimeTest {
     public static void main(String[] args) {
    //     Scanner scanner = new Scanner(System.in);
