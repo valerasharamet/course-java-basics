@@ -6,7 +6,7 @@ public class Atm {
     private int numberBanknotes100;
     private int numberBanknotes50;
     private int numberBanknotes20;
-    public ArrayList< int[]> options = new ArrayList<>();
+    private ArrayList< int[]> options = new ArrayList<>();
 
     public Atm (int numberBanknotes100, int numberBanknotes50,int numberBanknotes20) {
         if (numberBanknotes100<0 || numberBanknotes50<0 || numberBanknotes20 < 0)
