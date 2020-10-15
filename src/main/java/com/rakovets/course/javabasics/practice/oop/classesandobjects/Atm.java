@@ -33,7 +33,7 @@ public class Atm {
         else if((amount)%10 > 0)
             return false;
         if(numberBanknotes100 > 0 && numberBanknotes50 > 0 && numberBanknotes20 > 0 ){
-            if(amount%numberBanknotes100 == 0) {
+            if(amount % 100 == 0) {
                 countBanknotes100= amount / 100;
                 int [] arr = new int[3];
                 arr[0] = countBanknotes100;
@@ -58,7 +58,7 @@ public class Atm {
                     }
                 }*/
             }
-            if(amount%numberBanknotes50 == 0) {
+            if(amount % 50 == 0) {
                 countBanknotes50= amount / 50;
                 int [] arr = new int[3];
                 arr[0] = 0;
@@ -66,7 +66,7 @@ public class Atm {
                 arr[2] = 0;
                 options.add(arr);
             }
-            if(amount%numberBanknotes20 == 0) {
+            if(amount % 20 == 0) {
                 countBanknotes20= amount / 20;
                 int [] arr = new int[3];
                 arr[0] = 0;
