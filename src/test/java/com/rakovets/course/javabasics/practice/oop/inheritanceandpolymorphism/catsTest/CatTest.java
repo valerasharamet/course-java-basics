@@ -54,5 +54,4 @@ public class CatTest {
         Assertions.assertEquals("pouur", sphynx.purr(person));
         Assertions.assertEquals(101, person.getHappiness());
     }
-
 }
