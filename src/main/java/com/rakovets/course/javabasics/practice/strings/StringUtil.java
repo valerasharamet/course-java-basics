@@ -90,7 +90,7 @@ public class StringUtil {
           int num = str1.length() / n;
           String[] arrStr = new String[num];
           for (int i = 0; i < num; i ++) {
-               arrStr[i]=  str1.substring(0,n);
+               arrStr[i]=  str1.substring(i,n);
           }
           return arrStr;
      }
