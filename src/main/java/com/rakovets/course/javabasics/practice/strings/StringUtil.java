@@ -64,11 +64,11 @@ public class StringUtil {
      public int getDotCommaExclamationmark(String str1) {
           Pattern p = Pattern.compile("[.,!]");
           Matcher m = p.matcher(str1);
-          int f = 0;
+          int count = 0;
           while (m.find()) {
-               f++;
+               count++;
           }
-          return f;
+          return count;
      }
 
      //task10
@@ -91,9 +91,6 @@ public class StringUtil {
           String[] arrStr = new String[num];
           for (int i = 0; i < num; i ++) {
                arrStr[i]=  str1.substring(0,n);
-               str1=str1.substring(n,str1.length());
-              // arrStr[num] = str1.substring(i, i + n);
-             //  num++;
           }
           return arrStr;
      }
@@ -144,7 +141,7 @@ public class StringUtil {
                     if(str2.charAt(i)==str1.charAt(j))
                          break;
                }
-               if (j==str1.length()) result= result+str2.charAt(i);
+               if (j==str1.length()) result= result + str2.charAt(i);
           }
           return result;
      }
