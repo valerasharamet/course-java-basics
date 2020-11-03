@@ -7,6 +7,10 @@ public class Mag extends Hero {
         this.mana = mana;
     }
 
+    public int getMana() {
+        return mana;
+    }
+
     @Override
     public void attackEnemy(Enemy enemy) {
         System.out.println("The Mag attacks the enemy!!!");
@@ -14,7 +18,7 @@ public class Mag extends Hero {
     }
 
      public void magUltimate () {
-        if(this.health <=50 && mana >100 ) {
+        if(this.isAlive()== false && this.mana >= 100 ) {
             this.health = 500;
             this.damage = 300;
             this.mana = this.mana - 100;

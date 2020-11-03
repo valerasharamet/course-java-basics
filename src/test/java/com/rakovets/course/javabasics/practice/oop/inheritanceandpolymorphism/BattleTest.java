@@ -42,9 +42,12 @@ public class BattleTest {
         Assertions.assertEquals(150, mag.getHealth());
         mag.attackEnemy(enemy);
         mag.attackEnemy(enemy);
+        mag.attackEnemy(enemy);
+        Assertions.assertEquals(false,mag.isAlive());
         mag.magUltimate();
         Assertions.assertEquals(500, mag.getHealth());
         Assertions.assertEquals(300, mag.getDamage());
+        Assertions.assertEquals(100,mag.getMana());
     }
 
     @Test
