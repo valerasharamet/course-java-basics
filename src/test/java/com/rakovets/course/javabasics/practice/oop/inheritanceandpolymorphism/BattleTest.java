@@ -32,6 +32,7 @@ public class BattleTest {
         Assertions.assertEquals(false, zombie.isAlive());
         zombie.zombieUltimate();
         Assertions.assertEquals(1, zombie.getLifeCount());
+        Assertions.assertEquals(200,zombie.getHealth());
     }
 
     @Test

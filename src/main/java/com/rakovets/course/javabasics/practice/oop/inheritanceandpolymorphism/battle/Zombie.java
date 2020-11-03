@@ -14,7 +14,7 @@ public class Zombie extends Enemy {
 
     public void zombieUltimate() {
         if( lifeCount > 0 && this.isAlive() == false) {
-            this.health = 50;
+            this.health = 200;
             lifeCount--;
         }
     }
