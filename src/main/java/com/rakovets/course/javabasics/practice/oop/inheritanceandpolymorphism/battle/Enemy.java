@@ -2,9 +2,11 @@ package com.rakovets.course.javabasics.practice.oop.inheritanceandpolymorphism.b
 
 public class Enemy implements Mortal{
     protected int health;
+    protected int damage;
 
-    public Enemy(int health) {
+    public Enemy(int health, int damage) {
         this.health = health;
+        this.damage = damage;
     }
 
     public int getHealth() {
@@ -15,12 +17,14 @@ public class Enemy implements Mortal{
         this.health = health;
     }
 
-    public void takeDamage(int damage) {
+    public void takeDamage(int damage, Hero hero) {
         health = health - damage;
-        if (health < 0) health = 0;
+        hero.takeDamage(this.damage);
     }
+
     @Override
     public boolean isAlive() {
         return (health > 0);
     }
+
 }

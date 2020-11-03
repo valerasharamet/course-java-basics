@@ -2,13 +2,19 @@ package com.rakovets.course.javabasics.practice.oop.inheritanceandpolymorphism.b
 
 public class Archer extends Hero {
 
-    public Archer(String name) {
-        super(name);
+    public Archer(String name, int health, int damage) {
+        super(name, health, damage);
     }
 
     @Override
     public void attackEnemy( Enemy enemy ) {
         System.out.println("The Archer attacks the enemy!!!");
-        enemy.takeDamage(20);
+        enemy.takeDamage(this.damage, this);
+    }
+
+    public void archerUltimate() {
+        if(this.health <=200) {
+            this.damage = this.damage * 2;
+        }
     }
 }
