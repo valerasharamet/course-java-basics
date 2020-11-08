@@ -19,6 +19,7 @@ public class StudioTest  {
         actors.add(new Actor("Lebron","James",139.5,35));
         actors.add(new Actor("Klay","Thomson",93.5,29));
         actors.add(new Actor("Antony","Davis",93.5,31));
+        actors.add(new Actor("Antony","Carmelo",87,38));
         Studio studio = new Studio(actors);
         LinkedList<Actor> actors2 = new LinkedList<Actor>(studio.fire(actors));
         Assertions.assertEquals(actors2.getFirst().getFirstName(),actors.getFirst().getFirstName());
