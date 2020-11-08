@@ -4,12 +4,10 @@ import Studio.Actor;
 import Studio.Studio;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
 import java.util.LinkedList;
 
 public class StudioTest  {
     LinkedList<Actor> actors = new LinkedList<Actor>();
-
 
     @Test
     void studiooTest () {
@@ -27,9 +25,5 @@ public class StudioTest  {
         actors.sort(new ActorAgeComparator());
         actors2.sort(new ActorAgeComparator());
         Assertions.assertEquals(actors2.getFirst().getAge(),actors.getFirst().getAge());
-
     }
-
-
-
 }
