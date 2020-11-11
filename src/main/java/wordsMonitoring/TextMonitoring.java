@@ -32,7 +32,11 @@ public class TextMonitoring {
     }
 
     public int getWord (String word) {
-        return ttex.get(word);
+        if(ttex.containsKey(word)) {
+            return ttex.get(word);
+        } else {
+            return -1;
+        }
     }
 
     public Map<String, Integer> getWordFrequencyDesc(boolean isAscendingFrequency) {

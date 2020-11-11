@@ -12,6 +12,10 @@ public class IsAscendingFrequencyComparatorTrue implements Comparator<String> {
 
     @Override
     public int compare (String a1 , String a2) {
-        return base.get(a1).compareTo(base.get(a2));
+        if(base.get(a1) == base.get(a2)) {
+            return 1;
+        } else {
+            return base.get(a1).compareTo(base.get(a2));
+        }
     }
 }
