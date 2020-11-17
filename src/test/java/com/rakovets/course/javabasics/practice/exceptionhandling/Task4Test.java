@@ -7,8 +7,9 @@ public class Task4Test {
         try {
             task4.addStr(strArr,4);
         } catch (ExeptTask4 e) {
-            e.getMessage();
             e.printStackTrace();
+            e.getMessage();
+
 
         }
     }
