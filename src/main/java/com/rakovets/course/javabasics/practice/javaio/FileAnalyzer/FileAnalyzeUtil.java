@@ -41,4 +41,29 @@ public class FileAnalyzeUtil {
         }
         return listStr;
     }
+
+    public List<String> returnListLetterMatch(String path) {
+        List<String> list = new ArrayList<>();
+        String str = "";
+
+        try (BufferedReader br = new BufferedReader(new FileReader(path))) {
+            while (br.readLine() != null) {
+                str = str + br.readLine();
+            }
+                str = str.replaceAll("\\pP", "");
+                String[] strArr = str.split(" ");
+                for (int i = 0; i < strArr.length - 1; i++) {
+                    if (Character.toLowerCase(strArr[i].charAt(strArr[i].length() - 1)) == Character.toLowerCase(strArr[i + 1].charAt(0))) {
+                        list.add(strArr[i]);
+                    }
+                }
+
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return list;
+    }
 }

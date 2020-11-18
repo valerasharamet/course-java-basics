@@ -10,6 +10,7 @@ import java.util.List;
 
 public class FileAnalyzeUtilTest {
     String str = "C:\\home\\dev\\course-java-basics\\src\\main\\resources\\taskIO.txt";
+    String task4 = "C:\\home\\dev\\course-java-basics\\src\\main\\resources\\task4.txt";
     FileAnalyzeUtil fileAnalyzeUtil = new FileAnalyzeUtil();
 
     @Test//task2
@@ -36,5 +37,13 @@ public class FileAnalyzeUtilTest {
         exp.add("enough");
         exp.add("of");
         Assertions.assertEquals(exp,fileAnalyzeUtil.returnListVowel(str));
+    }
+
+    @Test
+    public void returnListLetterMatchTest () {
+        List<String> exp = new ArrayList();
+        exp.add("poor");
+        exp.add("rain");
+        Assertions.assertEquals(exp,fileAnalyzeUtil.returnListLetterMatch(task4));
     }
 }
