@@ -2,26 +2,49 @@ package com.rakovets.course.javabasics.practice.concurrency.master_worker;
 
 import java.util.LinkedList;
 
-public class ThredWorker implements Runnable {
+public class ThredWorker extends Thread {
     public LinkedList<Integer> listInt;
+    public boolean isRun = true;
+    ThredMaster thredMaster;
 
-    public ThredWorker (LinkedList<Integer> listInt) {
+    public ThredWorker(LinkedList<Integer> listInt, ThredMaster thredMaster) {
         this.listInt = listInt;
+        this.thredMaster = thredMaster;
+
     }
 
 
-    @Override
-    public void run () {
-        System.out.println(". . .");
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+
+    public void run() {
+        while (isRun && thredMaster.isRun == true) {
+            if (listInt.size() > 0  ) {
+                for (Integer x : listInt) {
+                    try {
+                        System.out.printf("I slept %d seconds\n", x);
+                        Thread.sleep(x * 1000);
+                        listInt.remove(x);
+
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+
+            } else {
+                System.out.println(". . .");
+                try {
+                    Thread.sleep(3000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
-
+        }
     }
-
-
-
-
 }
+
+
+
+
+
+
+
