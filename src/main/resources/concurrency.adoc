@@ -43,7 +43,7 @@
 
 === Specification of task 6
 
-Когда у _thread-worker_ нет текущих задач, то он выводит в *Standard Output*: `...` и засыпает на 1 секунду.
+Когда у _thread-worker_ нет текущих задач, то он выводит в *Standard Output*:  и зас`...`ыпает на 1 секунду.
 
 == Project 'Censor'*
 
