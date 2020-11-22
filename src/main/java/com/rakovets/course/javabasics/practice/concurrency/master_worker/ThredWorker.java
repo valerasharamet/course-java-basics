@@ -10,10 +10,7 @@ public class ThredWorker extends Thread {
     public ThredWorker(LinkedList<Integer> listInt, ThredMaster thredMaster) {
         this.listInt = listInt;
         this.thredMaster = thredMaster;
-
     }
-
-
 
     public void run() {
         while (isRun && thredMaster.isRun == true) {
@@ -23,17 +20,14 @@ public class ThredWorker extends Thread {
                         System.out.printf("I slept %d seconds\n", x);
                         Thread.sleep(x * 1000);
                         listInt.remove(x);
-
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
-
-
             } else {
                 System.out.println(". . .");
                 try {
-                    Thread.sleep(3000);
+                    Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

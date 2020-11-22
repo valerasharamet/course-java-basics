@@ -23,7 +23,11 @@ public class ThredMaster implements Runnable{
             number = scanner.nextInt();
             if (number != -1) {
                 listInt.add(number);
-
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             } else {
                 isRun = false;
             }
