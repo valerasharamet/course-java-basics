@@ -35,6 +35,7 @@ public class ParallelCalculator {
         for (int i = 0; i <= thread; i++) {
             Thread thread1 = new Thread(new CalculatorThred(list, thread));
             thread1.start();
+            thread1.run();
         }
         return list;
 

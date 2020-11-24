@@ -14,22 +14,17 @@ public class CalculatorThred implements Runnable {
     @Override
     public void run() {
         int[] intArr = new int[new Random().nextInt(10)+1];
-        for(int x: intArr) {
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            x = (int) (Math.random() * 300);
+        for(int x : intArr) {
+            x = new Random().nextInt(300);
 
         }
-        list.add(intArr);
         int maxElem = intArr[0];
         for(int x:intArr ) {
             if(maxElem>=x) {
                 maxElem = x;
             }
         }
+        list.add(intArr);
         System.out.println("MaxElement = " + maxElem);
     }
 }
